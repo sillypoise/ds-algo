@@ -1,3 +1,3 @@
-[submodule "ds-algo-typescript"]
-	path = ds-algo-typescript
-	url = ./ds-algo-typescript/
+[submodule "typescript"]
+	path = typescript
+	url = ./typescript/
