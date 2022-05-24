@@ -1,7 +1,7 @@
 function containsDuplicate(nums: number[]) {
-  for (let i: number = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     let numToCompare = nums[i];
-    for (let j: number = i + 1; j < nums.length; j++) {
+    for (let j = i + 1; j < nums.length; j++) {
       let compareAgainst = nums[j];
       if (numToCompare === compareAgainst) {
         return true;
