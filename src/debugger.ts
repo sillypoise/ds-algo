@@ -1,26 +1,18 @@
-function TwoNumberSum(nums: number[], target: number): number[] {
-    if (nums.length <= 1) return [];
-    // O(n log n)
-    let sortedIndexList = nums.map((elem, i) => ({
-        val: elem,
-        ogIndex: i,
-    }));
-
-    sortedIndexList.sort((a, b) => a.val - b.val);
+function ValidPalindrome(s: string): boolean {
+    let normS = normaliseString(s);
+    if (!normS.length) return true;
     let leftP = 0;
-    let rightP = sortedIndexList.length - 1;
-    while (leftP < rightP) {
-        const currentSum =
-            sortedIndexList[leftP].val + sortedIndexList[rightP].val;
-        if (currentSum === target)
-            return [
-                sortedIndexList[leftP].ogIndex,
-                sortedIndexList[rightP].ogIndex,
-            ];
-        else if (currentSum < target) leftP++;
-        else if (currentSum > target) rightP--;
+    let rightP = normS.length - 1;
+    while (leftP <= rightP) {
+        if (normS[leftP] !== normS[rightP]) return false;
+        leftP++;
+        rightP--;
     }
-    return [];
+    return true;
 }
 
-TwoNumberSum([3, 2, 4], 6);
+//  HELPERS
+function normaliseString(s: string): string {
+    return s.replace(/[^a-z0-9]/gi, "").toLowerCase();
+}
+ValidPalindrome("ab_a");
