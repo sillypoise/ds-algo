@@ -1,28 +1,25 @@
 function ValidParenentheses(s: string): boolean {
+    return;
+}
+
+function S1_ValidParenentheses(s: string): boolean {
     if (s.length <= 1) return false;
     let stack: string[] = new Array();
-    const bracketType: Record<string, string> = {
+    let bracketType = {
         ")": "(",
         "]": "[",
         "}": "{",
     };
-    // if (s[0] in bracketType) return false;
+    if (s[0] in bracketType) return false;
     for (let char of s) {
         if (char in bracketType) {
-            if (stack.length && stack[stack.length - 1] == bracketType[char]) {
-                stack.pop();
-            } else {
+            if (bracketType[char] !== stack[stack.length - 1]) {
                 return false;
             }
+            stack.pop();
         } else {
             stack.push(char);
         }
     }
     return !stack.length;
 }
-
-ValidParenentheses("({[]})");
-ValidParenentheses("(}[)");
-ValidParenentheses("()[]{}");
-ValidParenentheses("()");
-ValidParenentheses("([}])");
