@@ -1,3 +1,5 @@
+import { describe, expect, it, test } from "vitest";
+
 function ValidPalindrome(s: string): boolean {
     return true;
 }
@@ -21,3 +23,9 @@ function S1_ValidPalindrome(s: string): boolean {
 function normaliseString(s: string): string {
     return s.replace(/[^a-z0-9]/gi, "").toLowerCase();
 }
+
+describe("Valid Palindrome", () => {
+    test("Valid Palidnrome", () => {
+        return;
+    });
+});

@@ -1,3 +1,5 @@
+import { describe, expect, it, test } from "vitest";
+
 function ValidParenentheses(s: string): boolean {
     return;
 }
@@ -23,3 +25,9 @@ function S1_ValidParenentheses(s: string): boolean {
     }
     return !stack.length;
 }
+
+describe("Valid Parentheses", () => {
+    test("Valid Parentheses", () => {
+        return;
+    });
+});
