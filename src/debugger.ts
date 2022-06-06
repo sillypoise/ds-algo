@@ -1,33 +1,33 @@
-class MinStack {
-    constructor() {}
+function BinarySearch(nums: number[], target: number): number {
+    let left = 0;
+    let right = nums.length - 1;
 
-    stack: number[] = [];
-    minStack: number[] = [];
-
-    push(val: number): void {
-        this.stack.push(val);
-        if (this.minStack.length) {
-            val = Math.min(val, this.minStack[this.minStack.length - 1]);
+    while (left <= right) {
+        let mid = Math.round((left + right) / 2);
+        if (nums[mid] === target) return mid;
+        if (nums[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
         }
-        this.minStack.push(val);
     }
-
-    pop(): void {
-        this.stack.pop();
-        this.minStack.pop();
-    }
-
-    top(): number {
-        return this.stack[this.stack.length - 1];
-    }
-
-    getMin(): number {
-        return this.minStack[this.minStack.length - 1];
-    }
+    return -1;
 }
 
-let s = new MinStack();
-s.push(43);
-s.push(2);
-s.push(13);
-s.push(5);
+// let left = 0;
+// let right = nums.length - 1;
+
+// while (left <= right) {
+//     let mid = Math.round((left + right) / 2);
+//     if (nums[mid] > target) {
+//         right = mid - 1;
+//     } else if (nums[mid] < target) {
+//         left = mid + 1;
+//     } else {
+//         return mid;
+//     }
+// }
+// return -1;
+
+BinarySearch([-1, 0, 3, 5, 9, 12], 9);
+BinarySearch([-1, 0, 3, 5, 9, 12], 2);
