@@ -1,33 +1,32 @@
-function BinarySearch(nums: number[], target: number): number {
-    let left = 0;
-    let right = nums.length - 1;
-
-    while (left <= right) {
-        let mid = Math.round((left + right) / 2);
-        if (nums[mid] === target) return mid;
-        if (nums[mid] > target) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
-    }
-    return -1;
+interface ListNode {
+    val: number;
+    next: ListNode | null;
 }
 
-// let left = 0;
-// let right = nums.length - 1;
+class ListNode {
+    val: number;
+    next: ListNode | null;
+    constructor(val?: number, next?: ListNode | null) {
+        this.val = !val ? 0 : val;
+        this.next = !next ? null : next;
+    }
+}
 
-// while (left <= right) {
-//     let mid = Math.round((left + right) / 2);
-//     if (nums[mid] > target) {
-//         right = mid - 1;
-//     } else if (nums[mid] < target) {
-//         left = mid + 1;
-//     } else {
-//         return mid;
-//     }
-// }
-// return -1;
+function ReverseLinkedList(head: ListNode | null): ListNode | null {
+    let prev = null;
+    let curr = head;
 
-BinarySearch([-1, 0, 3, 5, 9, 12], 9);
-BinarySearch([-1, 0, 3, 5, 9, 12], 2);
+    while (curr) {
+        const next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+let s = new ListNode(4);
+let t = new ListNode(10, s);
+let v = new ListNode(15, t);
+
+ReverseLinkedList(v);
