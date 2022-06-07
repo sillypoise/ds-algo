@@ -13,6 +13,13 @@ class ListNode {
 }
 
 function MergeTwoSortedLists(list1: ListNode | null, list2: ListNode | null) {
+    return;
+}
+
+function S1_MergeTwoSortedLists(
+    list1: ListNode | null,
+    list2: ListNode | null
+) {
     let dummy = new ListNode();
     let tail = dummy;
 
@@ -35,12 +42,4 @@ function MergeTwoSortedLists(list1: ListNode | null, list2: ListNode | null) {
     return dummy.next;
 }
 
-let s = new ListNode(15);
-let t = new ListNode(10, s);
-let v = new ListNode(4, t);
-
-let a = new ListNode(14);
-let b = new ListNode(12, a);
-let c = new ListNode(2, b);
-
-MergeTwoSortedLists(v, c);
+export {};

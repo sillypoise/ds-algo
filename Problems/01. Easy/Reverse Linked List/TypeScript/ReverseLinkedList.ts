@@ -42,3 +42,5 @@ function S2_ReverseLinkedList(head: ListNode | null): ListNode | null {
         return recursiveHelper(next, curr);
     }
 }
+
+export {};
