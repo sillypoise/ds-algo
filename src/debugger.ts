@@ -15,29 +15,23 @@ class TreeNode {
         this.right = !right ? null : right;
     }
 }
-function InvertBinaryTree(root: TreeNode | null): TreeNode | null {
-    let queue = [root];
-    while (queue.length) {
-        let child = [];
-        for (let node of queue) {
-            if (!node) continue;
-            let temp = node.left;
-            node.left = node.right;
-            node.right = temp;
-            if (node.left) {
-                child.push(node.left);
-            }
-            if (node.right) {
-                child.push(node.right);
-            }
+function MaximumDepthOfBinaryTree(root: TreeNode | null): number {
+    let stack: [TreeNode | null, number][] = [[root, 1]];
+    let res = 0;
+
+    while (stack.length) {
+        let [node, depth] = stack.pop();
+        if (node) {
+            res = Math.max(res, depth);
+            stack.push([node.left, depth++]);
+            stack.push([node.right, depth++]);
         }
-        queue = child;
     }
-    return root;
+    return res;
 }
 
 let c1 = new TreeNode(3);
 let c2 = new TreeNode(8);
 let root = new TreeNode(15, c1, c2);
 
-InvertBinaryTree(root);
+MaximumDepthOfBinaryTree(root);
