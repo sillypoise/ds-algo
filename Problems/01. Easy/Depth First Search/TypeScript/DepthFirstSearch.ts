@@ -7,40 +7,29 @@ class Node {
         this.children?.push(new Node(val));
     }
 
-    DepthFirstSearch(arr: number[]) {
+    S1_DepthFirstSearch(arr: number[]) {
         if (this.val) {
             arr.push(this.val);
         }
         if (this.children?.length) {
             for (let child of this.children) {
-                child.DepthFirstSearch(arr);
+                child.S1_DepthFirstSearch(arr);
             }
         }
         return arr;
     }
 }
 
-let t = new Node(4);
-t.addChild(5);
-t.addChild(7);
-t.addChild(9);
-
-if (t.children) t.children[0].addChild(12);
-if (t.children) t.children[1].addChild(16);
-if (t.children) t.children[2].addChild(20);
-
-t.DepthFirstSearch([]);
-
-function dfs(root: Node, arr: number[]): number[] {
+function S1_DepthFirstSearch(root: Node, arr: number[]): number[] {
     if (root.val) {
         arr.push(root.val);
     }
     if (root.children?.length) {
         for (let child of root.children) {
-            dfs(child, arr);
+            S1_DepthFirstSearch(child, arr);
         }
     }
     return arr;
 }
 
-dfs(t, []);
+export {};
