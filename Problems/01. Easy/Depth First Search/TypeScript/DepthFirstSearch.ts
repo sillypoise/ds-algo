@@ -22,6 +22,7 @@ class Node {
     S2_DepthFirstSearch(): number[] {
         let arr: number[] = [];
         let stack: Node[] = [this];
+
         while (stack.length) {
             let node = stack.pop();
             if (node) {

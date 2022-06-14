@@ -26,6 +26,18 @@ class Node {
             return arr;
         }
     }
+
+    S2_BreadthFirstSearch(arr: number[]): number[] {
+        if (this.val) {
+            arr.push(this.val);
+        }
+        if (this.children?.length) {
+            for (let child of this.children) {
+                child;
+            }
+        }
+        return arr;
+    }
 }
 
 function S1_BreadthFirstSearch(root: Node): number[] {
@@ -45,6 +57,11 @@ function S1_BreadthFirstSearch(root: Node): number[] {
             }
         }
     }
+    return arr;
+}
+
+function S2_BreadthFirstSearch(root: Node, arr: number[]): number[] {
+    // TODO
     return arr;
 }
 
