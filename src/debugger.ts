@@ -10,33 +10,62 @@ class TreeNode {
     }
 }
 
-let t: TreeNode = {
+let unbalanced: TreeNode = {
     val: 1,
     left: {
         val: 2,
         left: {
-            val: 4,
-            left: null,
-            right: null,
+            val: 3,
+            left: {
+                val: 4,
+                left: null,
+                right: null,
+            },
+            right: {
+                val: 4,
+                left: null,
+                right: null,
+            },
         },
         right: {
-            val: 5,
+            val: 3,
             left: null,
             right: null,
         },
     },
     right: {
-        val: 3,
+        val: 2,
         left: null,
         right: null,
     },
 };
 
-function S1_DiameterOfBinaryTree(root: TreeNode | null): number {
-    if (!root) return 0;
-    let maxLength = 0;
+let balanced: TreeNode = {
+    val: 3,
+    left: {
+        val: 9,
+        left: null,
+        right: null,
+    },
+    right: {
+        val: 20,
+        left: {
+            val: 15,
+            left: null,
+            right: null,
+        },
+        right: {
+            val: 7,
+            left: null,
+            right: null,
+        },
+    },
+};
 
-    function dfs(node: TreeNode): number {
+function BalancedBinaryTree(root: TreeNode | null): boolean {
+    let balanced = true;
+
+    function dfs(node: TreeNode | null): number {
         if (!node) return 0;
 
         let left = 0;
@@ -45,11 +74,16 @@ function S1_DiameterOfBinaryTree(root: TreeNode | null): number {
         if (node.left) left = dfs(node.left);
         if (node.right) right = dfs(node.right);
 
-        maxLength = Math.max(maxLength, left + right);
-        return Math.max(left, right) + 1;
+        if (Math.abs(left - right) > 1) {
+            balanced = false;
+        }
+        return 1 + Math.max(left, right);
     }
+
     dfs(root);
-    return maxLength;
+
+    return balanced;
 }
 
-S1_DiameterOfBinaryTree(t);
+BalancedBinaryTree(balanced);
+BalancedBinaryTree(unbalanced);
