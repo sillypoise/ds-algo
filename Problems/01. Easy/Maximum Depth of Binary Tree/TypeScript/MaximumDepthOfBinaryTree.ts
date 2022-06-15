@@ -17,7 +17,7 @@ class TreeNode {
 }
 
 function MaximumDepthOfBinaryTree(root: TreeNode | null): number {
-    return;
+    return 0;
 }
 
 function S1_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
@@ -43,8 +43,10 @@ function S2_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
         let len = queue.length;
         for (let i = 0; i < len; i++) {
             let node = queue.shift();
-            if (node.left) queue.push(node.left);
-            if (node.right) queue.push(node.right);
+            if (node) {
+                if (node.left) queue.push(node.left);
+                if (node.right) queue.push(node.right);
+            }
         }
         depth++;
     }
@@ -59,7 +61,7 @@ function V2_S2_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
     let depth = 0;
 
     while (queue.length) {
-        const children = [];
+        const children: TreeNode[] = [];
         for (let node of queue) {
             if (!node) continue;
             if (node.left) children.push(node.left);
@@ -74,11 +76,14 @@ function V2_S2_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
 // Iterative DFS
 
 function S3_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
+    if (!root) return 0;
+
     let stack: [TreeNode, number][] = [[root, 1]];
-    let maxDepth = 0;
+    let maxDepth = 1;
 
     while (stack.length) {
-        let [node, depth] = stack.pop();
+        let [node, depth] = stack.pop()!;
+
         if (node) {
             maxDepth = Math.max(maxDepth, depth);
             if (node.left) stack.push([node.left, depth + 1]);

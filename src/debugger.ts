@@ -10,52 +10,46 @@ class TreeNode {
     }
 }
 
-let t = new TreeNode(3);
-let v = new TreeNode(5);
-let u = new TreeNode(8, t, v);
+let t: TreeNode = {
+    val: 1,
+    left: {
+        val: 2,
+        left: {
+            val: 4,
+            left: null,
+            right: null,
+        },
+        right: {
+            val: 5,
+            left: null,
+            right: null,
+        },
+    },
+    right: {
+        val: 3,
+        left: null,
+        right: null,
+    },
+};
 
-function S2_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
+function S1_DiameterOfBinaryTree(root: TreeNode | null): number {
     if (!root) return 0;
+    let maxLength = 0;
 
-    let stack: [TreeNode, number][] = [[root, 1]];
-    let depth = 0;
+    function dfs(node: TreeNode): number {
+        if (!node) return 0;
 
-    while (stack.length) {
-        let node = stack.pop();
-        if (node) {
-            depth = Math.max(depth, node[1]);
-            if (node[0].left) {
-                stack.push([node[0].left, node[1] + 1]);
-            }
-            if (node[0].right) {
-                stack.push([node[0].right, node[1] + 1]);
-            }
-        }
+        let left = 0;
+        let right = 0;
+
+        if (node.left) left = dfs(node.left);
+        if (node.right) right = dfs(node.right);
+
+        maxLength = Math.max(maxLength, left + right);
+        return Math.max(left, right) + 1;
     }
-    return depth;
+    dfs(root);
+    return maxLength;
 }
 
-function S3_MaximumDepthOfBinaryTree(root: TreeNode | null): number {
-    if (!root) return 0;
-
-    let stack: TreeNode[] = [root];
-    let depth = 1;
-
-    while (stack.length) {
-        let node = stack.pop();
-
-        if (node) {
-            if (node.left) {
-                stack.push(node.left);
-                depth++;
-            }
-            if (node.right) {
-                stack.push(node.right);
-                depth++;
-            }
-        }
-    }
-    return depth;
-}
-
-S3_MaximumDepthOfBinaryTree(u);
+S1_DiameterOfBinaryTree(t);
