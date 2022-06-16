@@ -15,7 +15,7 @@ class ListNode {
 // ITERATIVE
 function S1_ReverseLinkedList(head: ListNode | null): ListNode | null {
     let curr = head;
-    let prev = null;
+    let prev: ListNode | null = null;
 
     while (curr) {
         let next = curr.next;

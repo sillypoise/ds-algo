@@ -12,6 +12,10 @@ class ListNode {
     }
 }
 
+function LinkedListCycle(head: ListNode | null): boolean {
+    return true;
+}
+
 function S1_LinkedListCycle(head: ListNode | null): boolean {
     let slowP = head;
     let fastP = head;
@@ -26,10 +30,4 @@ function S1_LinkedListCycle(head: ListNode | null): boolean {
     return false;
 }
 
-let head = new ListNode(3);
-head.next = new ListNode(2);
-head.next.next = new ListNode(0);
-head.next.next.next = new ListNode(-4);
-head.next.next.next.next = head.next;
-
-S1_LinkedListCycle(head);
+export {};
