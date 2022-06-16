@@ -1,15 +1,18 @@
-function S1_FindAverageSubarray(arr: number[], K: number): number[] {
+function FindAverageSubarray(arr: number[], k: number): number[] {
+    return [];
+}
+
+function S1_FindAverageSubarray(arr: number[], k: number): number[] {
     let result: number[] = [];
-    for (let i = 0; i < arr.length - K + 1; i++) {
+    for (let i = 0; i < arr.length - k + 1; i++) {
         let sum = 0.0;
-        for (let j = i; j < i + K; j++) {
+        for (let j = i; j < i + k; j++) {
             sum += arr[j];
         }
-        result.push(sum / K);
+        result.push(sum / k);
     }
     return result;
 }
-
 function S2_FindAverageSubarray(arr: number[], k: number): number[] {
     let result: number[] = [];
     let windowSum = 0.0;
@@ -25,5 +28,4 @@ function S2_FindAverageSubarray(arr: number[], k: number): number[] {
     return result;
 }
 
-S1_FindAverageSubarray([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
-S2_FindAverageSubarray([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
+let arr = [1, 3, 2, 6, -1, 4, 1, 8, 2];
