@@ -12,6 +12,10 @@ class ListNode {
     }
 }
 
+function LinkedListCycleLength(head: ListNode | null): boolean {
+    return true;
+}
+
 function S1_LinkedListCycleLength(head: ListNode | null): number {
     let slowP = head;
     let fastP = head;
@@ -37,10 +41,4 @@ function cycleLength(node: ListNode): number {
     return length;
 }
 
-let head = new ListNode(3);
-head.next = new ListNode(2);
-head.next.next = new ListNode(0);
-head.next.next.next = new ListNode(-4);
-head.next.next.next.next = head.next;
-
-S1_LinkedListCycleLength(head);
+export {};
