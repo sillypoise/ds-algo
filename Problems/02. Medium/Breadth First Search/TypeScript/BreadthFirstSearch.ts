@@ -8,6 +8,8 @@ class Node {
     }
 
     S1_BreadthFirstSearch(): number[] {
+        if (!this) return [];
+
         let arr: number[] = [];
         let queue: Node[] = [this];
 
@@ -23,11 +25,13 @@ class Node {
                     }
                 }
             }
-            return arr;
         }
+        return arr;
     }
 
     S2_BreadthFirstSearch(arr: number[]): number[] {
+        if (!this) return [];
+
         if (this.val) {
             arr.push(this.val);
         }
@@ -41,6 +45,8 @@ class Node {
 }
 
 function S1_BreadthFirstSearch(root: Node): number[] {
+    if (!root) return [];
+
     let arr: number[] = [];
     let queue: Node[] = [root];
 

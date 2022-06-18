@@ -16,6 +16,10 @@ class TreeNode {
     }
 }
 
+function SameTree(root: TreeNode | null): boolean {
+    return false;
+}
+
 function S1_SameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     if (!p && !q) return true;
     if (!p || !q) return false;
@@ -24,41 +28,3 @@ function S1_SameTree(p: TreeNode | null, q: TreeNode | null): boolean {
 
     return S1_SameTree(p.left!, q.left!) && S1_SameTree(p.right!, q.right!);
 }
-
-let t1 = {
-    val: 10,
-    left: {
-        val: 7,
-        left: null,
-        right: {
-            val: 5,
-            left: null,
-            right: null,
-        },
-    },
-    right: {
-        val: 3,
-        left: null,
-        right: null,
-    },
-};
-
-let t2 = {
-    val: 10,
-    left: {
-        val: 7,
-        left: null,
-        right: {
-            val: 5,
-            left: null,
-            right: null,
-        },
-    },
-    right: {
-        val: 3,
-        left: null,
-        right: null,
-    },
-};
-
-S1_SameTree(t1, t2);
