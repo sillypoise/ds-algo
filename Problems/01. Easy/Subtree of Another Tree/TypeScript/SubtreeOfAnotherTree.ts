@@ -16,6 +16,10 @@ class TreeNode {
     }
 }
 
+function SubtreeOfAnotherTree(s: TreeNode | null, t: TreeNode | null): boolean {
+    return true;
+}
+
 function SameTree(s: TreeNode | null, t: TreeNode | null): boolean {
     if (!s && !t) return true;
     if (!s || !t) return false;
@@ -40,32 +44,4 @@ function S1_SubtreeOfAnotherTree(
     );
 }
 
-let t1 = {
-    val: 10,
-    left: {
-        val: 7,
-        left: null,
-        right: {
-            val: 5,
-            left: null,
-            right: null,
-        },
-    },
-    right: {
-        val: 3,
-        left: null,
-        right: null,
-    },
-};
-
-let t2 = {
-    val: 7,
-    left: null,
-    right: {
-        val: 5,
-        left: null,
-        right: null,
-    },
-};
-
-S1_SubtreeOfAnotherTree(t1, t2);
+export {};
