@@ -16,6 +16,15 @@ class BSTNode {
     }
 }
 
+function LowestCommonAncestorOfBST(
+    root: BSTNode | null,
+    p: BSTNode | null,
+    q: BSTNode | null
+): BSTNode | null {
+    return null;
+}
+
+// ITERATIVE
 function S1_LowestCommonAncestorOfBST(
     root: BSTNode | null,
     p: BSTNode | null,
@@ -36,50 +45,32 @@ function S1_LowestCommonAncestorOfBST(
     return root;
 }
 
-let t1 = {
-    val: 6,
-    left: {
-        val: 2,
-        left: {
-            val: 0,
-            left: null,
-            right: null,
-        },
-        right: {
-            val: 4,
-            left: {
-                val: 3,
-                left: null,
-                right: null,
-            },
-            right: {
-                val: 5,
-                left: null,
-                right: null,
-            },
-        },
-    },
-    right: {
-        val: 8,
-        left: {
-            val: 7,
-            left: null,
-            right: null,
-        },
-        right: {
-            val: 9,
-            left: null,
-            right: null,
-        },
-    },
-};
+// RECURSIVE
+function S2_LowestCommonAncestorOfBST(
+    root: BSTNode | null,
+    p: BSTNode | null,
+    q: BSTNode | null
+): BSTNode | null {
+    let curr = root;
+    if (!p || !q) return null;
 
-let p = {
-    val: 2,
-};
+    if (curr) {
+        if (p.val > curr.val && q.val > curr.val)
+            return S2_LowestCommonAncestorOfBST(
+                curr.right ? curr.right : null,
+                p,
+                q
+            );
+        else if (p.val < curr.val && q.val < curr.val)
+            return S2_LowestCommonAncestorOfBST(
+                curr.left ? curr.left : null,
+                p,
+                q
+            );
+        else return root;
+    }
 
-let q = {
-    val: 8,
-};
+    return root;
+}
 
-S1_LowestCommonAncestorOfBST(t1, p, q);
+export {};
