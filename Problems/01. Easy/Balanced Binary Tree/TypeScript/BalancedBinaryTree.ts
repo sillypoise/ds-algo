@@ -17,6 +17,10 @@ class TreeNode {
 }
 
 function BalancedBinaryTree(root: TreeNode | null): boolean {
+    return false;
+}
+
+function S1_BalancedBinaryTree(root: TreeNode | null): boolean {
     let balanced = true;
 
     function dfs(node: TreeNode | null): number {

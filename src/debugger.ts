@@ -1,14 +1,14 @@
-interface BSTNode {
+interface TreeNode {
     val: number;
-    left?: BSTNode | null;
-    right?: BSTNode | null;
+    left?: TreeNode | null;
+    right?: TreeNode | null;
 }
 
-class BSTNode {
+class TreeNode {
     constructor(
         public val: number,
-        public left?: BSTNode | null,
-        public right?: BSTNode | null
+        public left?: TreeNode | null,
+        public right?: TreeNode | null
     ) {
         this.val = !val ? 0 : val;
         this.left = !left ? null : left;
@@ -16,70 +16,49 @@ class BSTNode {
     }
 }
 
-function S1_LowestCommonAncestorOfBST(
-    root: BSTNode | null,
-    p: BSTNode | null,
-    q: BSTNode | null
-): BSTNode | null {
-    let curr = root;
-    if (!p || !q) return null;
+function S1_BalancedBinaryTree(root: TreeNode | null): boolean {
+    let balanced = true;
 
-    while (curr) {
-        if (p.val > curr.val && q.val > curr.val) {
-            curr = curr.right ? curr.right : null;
-        } else if (p.val < curr.val && q.val < curr.val) {
-            curr = curr.left ? curr.left : null;
-        } else {
-            return curr;
+    function dfs(node: TreeNode | null): number {
+        if (!node) return 0;
+
+        let left = 0;
+        let right = 0;
+
+        if (node.left) left = dfs(node.left);
+        if (node.right) right = dfs(node.right);
+
+        if (Math.abs(left - right) > 1) {
+            balanced = false;
         }
+        return 1 + Math.max(left, right);
     }
-    return root;
+
+    dfs(root);
+
+    return balanced;
 }
 
 let t1 = {
-    val: 6,
+    val: 3,
     left: {
-        val: 2,
+        val: 9,
+        left: null,
+        right: null,
+    },
+    right: {
+        val: 20,
         left: {
-            val: 0,
+            val: 15,
             left: null,
             right: null,
         },
         right: {
-            val: 4,
-            left: {
-                val: 3,
-                left: null,
-                right: null,
-            },
-            right: {
-                val: 5,
-                left: null,
-                right: null,
-            },
-        },
-    },
-    right: {
-        val: 8,
-        left: {
             val: 7,
             left: null,
             right: null,
         },
-        right: {
-            val: 9,
-            left: null,
-            right: null,
-        },
     },
 };
 
-let p = {
-    val: 2,
-};
-
-let q = {
-    val: 8,
-};
-
-S1_LowestCommonAncestorOfBST(t1, p, q);
+S1_BalancedBinaryTree(t1);
