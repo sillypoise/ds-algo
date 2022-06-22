@@ -137,35 +137,4 @@ class Heap<T> {
     }
 }
 
-class KthLargestElementInStream {
-    heap: Heap<number>;
-    constructor(public k: number, public nums: number[]) {
-        this.heap = new Heap<number>();
-        this.heap.heapify(nums);
-        this.k = k;
-        while (this.heap.size() > k) {
-            this.heap.removeRoot();
-        }
-    }
-
-    add(val: number): number {
-        this.heap.add(val);
-        if (this.heap.size() > this.k) {
-            this.heap.removeRoot();
-        }
-        let res = this.heap.peek();
-
-        return res ? res : 0;
-    }
-}
-
-let t = new KthLargestElementInStream(3, [4, 5, 8, 2]);
-t.add(3);
-t;
-t.add(5);
-t;
-t.add(10);
-t;
-t.add(9);
-t;
-t.add(4);
+export {};

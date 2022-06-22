@@ -158,14 +158,3 @@ class KthLargestElementInStream {
         return res ? res : 0;
     }
 }
-
-let t = new KthLargestElementInStream(3, [4, 5, 8, 2]);
-t.add(3);
-t;
-t.add(5);
-t;
-t.add(10);
-t;
-t.add(9);
-t;
-t.add(4);
