@@ -1,4 +1,8 @@
 function MinCostClimbingStairs(cost: number[]): number {
+    return 0;
+}
+
+function S1_MinCostClimbingStairs(cost: number[]): number {
     cost.push(0);
 
     for (let i = cost.length - 3; i >= 0; i--) {
@@ -8,5 +12,3 @@ function MinCostClimbingStairs(cost: number[]): number {
     // guaranteed that cost will have at least two values
     return Math.min(cost[0], cost[1]);
 }
-
-MinCostClimbingStairs([10, 15, 20]);
