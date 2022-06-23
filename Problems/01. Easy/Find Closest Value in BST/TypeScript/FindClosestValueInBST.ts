@@ -1,41 +1,3 @@
-let t = {
-    val: 10,
-    left: {
-        val: 5,
-        left: {
-            val: 2,
-            left: {
-                val: 1,
-                left: null,
-                right: null,
-            },
-            right: null,
-        },
-        right: {
-            val: 5,
-            left: null,
-            right: null,
-        },
-    },
-    right: {
-        val: 15,
-        left: {
-            val: 13,
-            left: null,
-            right: {
-                val: 14,
-                left: null,
-                right: null,
-            },
-        },
-        right: {
-            val: 22,
-            left: null,
-            right: null,
-        },
-    },
-};
-
 interface TreeNode {
     val: number;
     left: TreeNode | null;
@@ -107,5 +69,4 @@ function S2_FindClosestValueInBST(
     return recursiveHelper(root, target, Infinity);
 }
 
-S1_FindClosestValueInBST(t, 12);
-S2_FindClosestValueInBST(t, 12);
+export {};
