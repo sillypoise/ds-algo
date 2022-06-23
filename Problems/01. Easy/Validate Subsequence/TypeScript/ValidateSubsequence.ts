@@ -1,3 +1,7 @@
+function ValidateSubsequence(seq: number[], sub: number[]): boolean {
+    return false;
+}
+
 function S1_ValidateSubsequence(seq: number[], sub: number[]): boolean {
     let i = 0;
     let j = 0;
@@ -9,5 +13,3 @@ function S1_ValidateSubsequence(seq: number[], sub: number[]): boolean {
 
     return j === sub.length;
 }
-
-S1_ValidateSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]);
