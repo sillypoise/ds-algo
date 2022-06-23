@@ -167,7 +167,7 @@ function S1_LastStoneWeight(stones: number[]): number {
     let heap = new Heap<number>(reverseCompareFunction(defaultCompare));
     heap.heapify(stones);
 
-    while (stones.length > 1) {
+    while (heap.size() > 1) {
         let first = heap.removeRoot();
         let second = heap.removeRoot();
 
