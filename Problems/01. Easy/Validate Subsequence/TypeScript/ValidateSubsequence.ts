@@ -13,3 +13,14 @@ function S1_ValidateSubsequence(seq: number[], sub: number[]): boolean {
 
     return j === sub.length;
 }
+
+function S2_ValidateSubsequence(seq: number[], sub: number[]): boolean {
+    let i = 0;
+
+    for (let value of seq) {
+        if (i === sub.length) break;
+        if (sub[i] === value) i++;
+    }
+
+    return i === sub.length;
+}
