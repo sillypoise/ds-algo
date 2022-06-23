@@ -10,6 +10,25 @@ function defaultCompare<T>(a: T, b: T): number {
         return 1;
     }
 }
+function reverseCompareFunction<T>(
+    compareFunction?: ICompareFunction<T>
+): ICompareFunction<T> {
+    if (isUndefined(compareFunction) || !isFunction(compareFunction)) {
+        return function (a, b) {
+            if (a < b) {
+                return 1;
+            } else if (a === b) {
+                return 0;
+            } else {
+                return -1;
+            }
+        };
+    } else {
+        return function (d: T, v: T) {
+            return compareFunction(d, v) * -1;
+        };
+    }
+}
 function swap<T>(array: T[], i: number, j: number): boolean {
     if (i < 0 || i >= array.length || j < 0 || j >= array.length) {
         return false;
@@ -21,6 +40,9 @@ function swap<T>(array: T[], i: number, j: number): boolean {
 }
 function isUndefined(obj: any): obj is undefined {
     return typeof obj === "undefined";
+}
+function isFunction(func: any): boolean {
+    return typeof func === "function";
 }
 
 class Heap<T> {
@@ -137,35 +159,21 @@ class Heap<T> {
     }
 }
 
-class KthLargestElementInStream {
-    heap: Heap<number>;
-    constructor(public k: number, public nums: number[]) {
-        this.heap = new Heap<number>();
-        this.heap.heapify(nums);
-        this.k = k;
-        while (this.heap.size() > k) {
-            this.heap.removeRoot();
+function S1_LastStoneWeight(stones: number[]): number {
+    let heap = new Heap<number>(reverseCompareFunction(defaultCompare));
+    heap.heapify(stones);
+
+    while (stones.length > 1) {
+        let first = heap.removeRoot();
+        let second = heap.removeRoot();
+
+        if (second && first) {
+            if (second < first) {
+                heap.add(first - second);
+            }
         }
     }
-
-    add(val: number): number {
-        this.heap.add(val);
-        if (this.heap.size() > this.k) {
-            this.heap.removeRoot();
-        }
-        let res = this.heap.peek();
-
-        return res ? res : 0;
-    }
+    return stones[0] ? stones[0] : 0;
 }
 
-let t = new KthLargestElementInStream(3, [4, 5, 8, 2]);
-t.add(3);
-t;
-t.add(5);
-t;
-t.add(10);
-t;
-t.add(9);
-t;
-t.add(4);
+S1_LastStoneWeight([2, 2]);

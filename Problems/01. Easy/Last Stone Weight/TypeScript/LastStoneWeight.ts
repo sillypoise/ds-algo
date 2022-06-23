@@ -10,15 +10,6 @@ function defaultCompare<T>(a: T, b: T): number {
         return 1;
     }
 }
-function swap<T>(array: T[], i: number, j: number): boolean {
-    if (i < 0 || i >= array.length || j < 0 || j >= array.length) {
-        return false;
-    }
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-    return true;
-}
 function reverseCompareFunction<T>(
     compareFunction?: ICompareFunction<T>
 ): ICompareFunction<T> {
@@ -37,6 +28,15 @@ function reverseCompareFunction<T>(
             return compareFunction(d, v) * -1;
         };
     }
+}
+function swap<T>(array: T[], i: number, j: number): boolean {
+    if (i < 0 || i >= array.length || j < 0 || j >= array.length) {
+        return false;
+    }
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+    return true;
 }
 function isUndefined(obj: any): obj is undefined {
     return typeof obj === "undefined";
@@ -157,6 +157,27 @@ class Heap<T> {
     isEmpty(): boolean {
         return this.data.length <= 0;
     }
+}
+
+function LastStoneWeight(stones: number[]): number {
+    return 0;
+}
+
+function S1_LastStoneWeight(stones: number[]): number {
+    let heap = new Heap<number>(reverseCompareFunction(defaultCompare));
+    heap.heapify(stones);
+
+    while (stones.length > 1) {
+        let first = heap.removeRoot();
+        let second = heap.removeRoot();
+
+        if (second && first) {
+            if (second < first) {
+                heap.add(first - second);
+            }
+        }
+    }
+    return stones[0] ? stones[0] : 0;
 }
 
 export {};
