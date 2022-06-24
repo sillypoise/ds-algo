@@ -16,6 +16,10 @@ class TreeNode {
     }
 }
 
+function BranchSums(root: TreeNode | null): number[] {
+    return [];
+}
+
 function S1_BranchSums(root: TreeNode | null): number[] {
     const sums: number[] = [];
 
