@@ -1,17 +1,21 @@
-function S1_PlusOne(digits: number[]): number[] {
-    let carry = 1;
-    for (let i = digits.length - 1; i >= 0; i--) {
-        digits[i] = digits[i] + carry;
-        if (digits[i] >= 10) {
-            carry = 1;
-            digits[i] = digits[i] - 10;
+function S2_SortedSquaresArray(nums: number[]): number[] {
+    let res: number[] = [];
+    let leftP = 0;
+    let rightP = nums.length - 1;
+
+    for (let i = nums.length - 1; i >= 0; i--) {
+        let left = nums[leftP];
+        let right = nums[rightP];
+
+        if (Math.abs(left) > Math.abs(right)) {
+            res[i] = Math.pow(left, 2);
+            leftP++;
         } else {
-            carry = 0;
+            res[i] = Math.pow(right, 2);
+            right--;
         }
     }
-    if (carry) digits.unshift(1);
-    return digits;
+    return res;
 }
 
-S1_PlusOne([1, 2, 3]);
-S1_PlusOne([4, 3, 2, 1]);
+S2_SortedSquaresArray([-4, -1, 0, 3, 10]);
