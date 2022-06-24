@@ -1,3 +1,7 @@
+function MeetingRooms(intervals: number[]): boolean {
+    return false;
+}
+
 function S1_MeetingRooms(intervals: [number, number][]): boolean {
     intervals.sort((a, b) => a[0] - b[0]);
 
