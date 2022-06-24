@@ -1,3 +1,8 @@
+function MaximumSubarray(nums: number[]): number {
+    return 0;
+}
+
+// O(n)
 function S1_MaximumSubarray(nums: number[]): number {
     let maxSub = nums[0];
     let curSum = 0;
