@@ -1,14 +1,14 @@
 interface TreeNode {
-    val?: number;
-    left?: TreeNode | null;
-    right?: TreeNode | null;
+    val: number;
+    left: TreeNode | null;
+    right: TreeNode | null;
 }
 
 class TreeNode {
     constructor(
-        public val?: number,
-        public left?: TreeNode | null,
-        public right?: TreeNode | null
+        public val: number,
+        public left: TreeNode | null,
+        public right: TreeNode | null
     ) {
         this.val = !val ? 0 : val;
         this.left = !left ? null : left;
@@ -36,7 +36,7 @@ function S1_InvertBinaryTree(root: TreeNode | null): TreeNode | null {
 function S2_InvertBinaryTree(root: TreeNode | null): TreeNode | null {
     let queue = [root];
     while (queue.length) {
-        let child = [];
+        let child: TreeNode[] = [];
         for (let node of queue) {
             if (!node) continue;
             let temp = node.left;

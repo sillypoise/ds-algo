@@ -16,6 +16,10 @@ class TreeNode {
     }
 }
 
+function NodeDepths(root: TreeNode | null): number {
+    return 0;
+}
+
 function S1_NodeDepths(root: TreeNode | null): number {
     if (!root) return 0;
 
@@ -84,4 +88,6 @@ let t: TreeNode = {
     },
 };
 
-S2_NodeDepths(t);
+S1_NodeDepths(t);
+
+export {};
