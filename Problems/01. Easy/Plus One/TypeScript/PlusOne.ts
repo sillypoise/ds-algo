@@ -1,3 +1,7 @@
+function PlusOne(digits: number[]): number[] {
+    return [];
+}
+
 function S1_PlusOne(digits: number[]): number[] {
     let carry = 1;
     for (let i = digits.length - 1; i >= 0; i--) {
@@ -14,4 +18,3 @@ function S1_PlusOne(digits: number[]): number[] {
 }
 
 S1_PlusOne([1, 2, 3]);
-S1_PlusOne([4, 3, 2, 1]);
