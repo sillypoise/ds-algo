@@ -1,3 +1,10 @@
+function TournamentWinner(
+    competitions: [string, string][],
+    results: number[]
+): string {
+    return "";
+}
+
 function S1_TournamentWinner(
     competitions: [string, string][],
     results: number[]
