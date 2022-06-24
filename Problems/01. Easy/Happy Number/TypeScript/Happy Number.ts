@@ -1,3 +1,7 @@
+function HappyNumber(n: number): boolean {
+    return false;
+}
+
 function S1_HappyNumber(n: number): boolean {
     let visited: Set<number> = new Set();
 
