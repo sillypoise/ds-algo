@@ -1,3 +1,7 @@
+function BubbleSort(arr: number[]): number[] {
+    return [];
+}
+
 function S1_BubbleSort(arr: number[]): number[] {
     let isSorted = false;
     let counter = 0;
@@ -23,3 +27,5 @@ function swap(i: number, j: number, arr: number[]) {
 }
 
 S1_BubbleSort([10, 45, 1, 63, 7, 89]);
+
+export {};

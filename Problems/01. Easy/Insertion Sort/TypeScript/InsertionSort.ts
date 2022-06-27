@@ -20,3 +20,5 @@ function swap(i: number, j: number, arr: number[]) {
 }
 
 S1_InsertionSort([10, 45, 1, 63, 7, 89]);
+
+export {};
