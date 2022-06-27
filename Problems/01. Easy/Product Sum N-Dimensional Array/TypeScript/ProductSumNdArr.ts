@@ -1,4 +1,8 @@
-function S1_ProductSumNdArr(arr: any[], multiplier: number = 1): number {
+function ProductSumNdArr(arr: number[]): number {
+    return 0;
+}
+
+function S1_ProductSumNdArr(arr: number[], multiplier: number = 1): number {
     let sum = 0;
 
     for (let element of arr) {
@@ -10,5 +14,3 @@ function S1_ProductSumNdArr(arr: any[], multiplier: number = 1): number {
     }
     return sum * multiplier;
 }
-
-S1_ProductSumNdArr([5, 2, [7, -1], 3, [6, [-13, 8], 4]]);
