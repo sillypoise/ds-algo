@@ -1,3 +1,7 @@
+function InsertionSort(arr: number[]): number[] {
+    return [];
+}
+
 function S1_InsertionSort(arr: number[]): number[] {
     for (let i = 1; i < arr.length; i++) {
         let j = i;
@@ -14,4 +18,5 @@ function swap(i: number, j: number, arr: number[]) {
     arr[j] = arr[i];
     arr[i] = temp;
 }
+
 S1_InsertionSort([10, 45, 1, 63, 7, 89]);
