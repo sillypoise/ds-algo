@@ -14,7 +14,7 @@ function S1_NthFib(n: number): number {
 
 function S2_NthFib(
     n: number,
-    memo: Record<number, number> = { 1: 0, 2: 0 }
+    memo: Record<number, number> = { 1: 0, 2: 1 }
 ): number {
     if (n in memo) {
         return memo[n];
@@ -29,12 +29,12 @@ function S3_NthFib(n: number): number {
     let counter = 3;
 
     while (counter <= n) {
-        const nextFib = lastTwo[0] + lastTwo[1];
+        let nextFib = lastTwo[0] + lastTwo[1];
         lastTwo[0] = lastTwo[1];
         lastTwo[1] = nextFib;
-        counter++;
+        counter += 1;
     }
-    return n > 1 ? lastTwo[1] : lastTwo[0];
+    return n > 0 ? lastTwo[1] : lastTwo[0];
 }
 
 S3_NthFib(5);
