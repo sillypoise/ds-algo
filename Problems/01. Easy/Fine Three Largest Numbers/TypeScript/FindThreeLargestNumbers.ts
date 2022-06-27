@@ -1,3 +1,9 @@
+function FindThreeLargestNumbers(
+    nums: number[]
+): [number, number, number] | null[] {
+    return [];
+}
+
 function S1_FindThreeLargestNumbers(
     nums: number[]
 ): [number, number, number] | null[] {
