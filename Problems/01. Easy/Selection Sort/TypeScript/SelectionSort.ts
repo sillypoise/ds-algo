@@ -1,3 +1,7 @@
+function SelectionSort(arr: number[]): number[] {
+    return [];
+}
+
 function S1_SelectionSort(arr: number[]): number[] {
     let startIdx = 0;
     while (startIdx < arr.length - 1) {
@@ -19,3 +23,5 @@ function swap(i: number, j: number, arr: number[]) {
 }
 
 S1_SelectionSort([10, 45, 1, 63, 7, 89]);
+
+export {};
