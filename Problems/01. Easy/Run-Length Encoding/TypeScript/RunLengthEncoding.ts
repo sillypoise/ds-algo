@@ -23,3 +23,5 @@ function S1_RunLengthEncoding(input: string): string {
 
     return encodedChars.join("");
 }
+
+S1_RunLengthEncoding("AAAAAAAAAAAAABBCCCCDD");

@@ -1,7 +1,7 @@
 import { describe, expect, it, test } from "vitest";
 
 function validAnagram(s: string, t: string): boolean {
-    return;
+    return false;
 }
 
 function S1_validAnagram(s: string, t: string): boolean {

@@ -1,53 +1,23 @@
-class ListNode {
-    val: number;
-    next: ListNode | null;
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = !val ? 0 : val;
-        this.next = !next ? null : next;
-    }
-}
+function S1_RunLengthEncoding(input: string): string {
+    let encodedChars: string[] = [];
+    let currLength = 1;
 
-function S1_RemoveDuplicatesLinkedList(head: ListNode | null): ListNode | null {
-    let curr = head;
+    for (let i = 1; i < input.length; i++) {
+        let currChar = input[i];
+        let prevChar = input[i - 1];
 
-    while (curr !== null) {
-        let nextDistinct = curr.next;
-        while (nextDistinct !== null && nextDistinct.val == curr.val) {
-            nextDistinct = nextDistinct.next;
+        if (currChar !== prevChar || currLength == 9) {
+            encodedChars.push(currLength.toString());
+            encodedChars.push(prevChar);
+            currLength = 0;
         }
-        curr.next = nextDistinct;
-        curr = nextDistinct;
+
+        currLength++;
     }
-    return head;
+    encodedChars.push(currLength.toString());
+    encodedChars.push(input[input.length - 1]);
+
+    return encodedChars.join("");
 }
 
-let ll = {
-    val: 1,
-    next: {
-        val: 1,
-        next: {
-            val: 3,
-            next: {
-                val: 4,
-                next: {
-                    val: 4,
-                    next: {
-                        val: 4,
-                        next: {
-                            val: 5,
-                            next: {
-                                val: 6,
-                                next: {
-                                    val: 6,
-                                    next: null,
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    },
-};
-
-S1_RemoveDuplicatesLinkedList(ll);
+S1_RunLengthEncoding("AAAAAAAAAAAAABBCCCCDD");
