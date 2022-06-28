@@ -1,3 +1,7 @@
+function MinWaitingTime(queries: number[]): number {
+    return 0;
+}
+
 function S1_MinWaitingTime(queries: number[]): number {
     queries.sort((a, b) => a - b);
 
