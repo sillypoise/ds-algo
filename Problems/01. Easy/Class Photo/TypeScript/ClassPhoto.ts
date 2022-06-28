@@ -1,3 +1,7 @@
+function ClassPhoto(red: number[], blue: number[]): boolean {
+    return false;
+}
+
 function S1_ClassPhoto(red: number[], blue: number[]): boolean {
     red.sort((a, b) => b - a);
     blue.sort((a, b) => b - a);
