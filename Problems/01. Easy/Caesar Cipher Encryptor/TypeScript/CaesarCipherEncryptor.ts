@@ -1,3 +1,7 @@
+function CaesarCipherEncryptor(s: string, key: number): string {
+    return "";
+}
+
 function S1_CaesarCipherEncryptor(s: string, key: number): string {
     let newLetters: string[] = [];
     let newKey = key % 26;
@@ -36,7 +40,3 @@ function S2_getNewLetter(
         ? alphabet[newLetterCode]
         : alphabet[-1 + (newLetterCode % 25)];
 }
-
-// TODO Not working properly
-
-S1_CaesarCipherEncryptor("abc");
