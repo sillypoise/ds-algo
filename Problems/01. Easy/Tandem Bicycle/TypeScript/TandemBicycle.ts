@@ -1,3 +1,11 @@
+function TandemBicycle(
+    red: number[],
+    blue: number[],
+    fastest: boolean = true
+): number {
+    return 0;
+}
+
 function S1_TandemBicycle(
     red: number[],
     blue: number[],
@@ -21,3 +29,4 @@ function S1_TandemBicycle(
 }
 
 S1_TandemBicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], true);
+export {};
