@@ -1,3 +1,7 @@
+function NonConstructibleChange(coins: number[]): number {
+    return 0;
+}
+
 function S1_NonConstructibleChange(coins: number[]): number {
     coins.sort((a, b) => a - b);
 
