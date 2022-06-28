@@ -7,6 +7,10 @@ class ListNode {
     }
 }
 
+function RemoveDuplicatesLinkedList(head: ListNode | null): ListNode | null {
+    return head;
+}
+
 function S1_RemoveDuplicatesLinkedList(head: ListNode | null): ListNode | null {
     let curr = head;
 
