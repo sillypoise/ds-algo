@@ -1,23 +1,23 @@
-function S1_RunLengthEncoding(input: string): string {
-    let encodedChars: string[] = [];
-    let currLength = 1;
+function S3_GenerateDocument(chars: string, doc: string): boolean {
+    let hash: Record<string, number> = {};
 
-    for (let i = 1; i < input.length; i++) {
-        let currChar = input[i];
-        let prevChar = input[i - 1];
-
-        if (currChar !== prevChar || currLength == 9) {
-            encodedChars.push(currLength.toString());
-            encodedChars.push(prevChar);
-            currLength = 0;
+    for (let char of chars) {
+        if (!hash[char]) {
+            hash[char] = 0;
         }
 
-        currLength++;
+        hash[char] += 1;
     }
-    encodedChars.push(currLength.toString());
-    encodedChars.push(input[input.length - 1]);
 
-    return encodedChars.join("");
+    for (let char of doc) {
+        if (!hash[char] || hash[char] === 0) {
+            return false;
+        }
+
+        hash[char] - +1;
+    }
+
+    return true;
 }
 
-S1_RunLengthEncoding("AAAAAAAAAAAAABBCCCCDD");
+S3_GenerateDocument("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!");
