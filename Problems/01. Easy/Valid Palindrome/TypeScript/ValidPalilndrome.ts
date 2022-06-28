@@ -6,17 +6,25 @@ function ValidPalindrome(s: string): boolean {
 
 function S1_ValidPalindrome(s: string): boolean {
     // ⌚💾 O(n)
-    let normS = normaliseString(s);
-    if (!normS.length) return true;
+    let norm = normaliseString(s);
+    if (!norm.length) return true;
     let leftP = 0;
-    let rightP = normS.length - 1;
+    let rightP = norm.length - 1;
     // ⌚ O(n)
     while (leftP <= rightP) {
-        if (normS[leftP] !== normS[rightP]) return false;
+        if (norm[leftP] !== norm[rightP]) return false;
         leftP++;
         rightP--;
     }
     return true;
+}
+
+function S2_ValidPalindrome(s: string): boolean {
+    const reversedChars: string[] = [];
+    for (let i = s.length - 1; i >= 0; i--) {
+        reversedChars.push(s[i]);
+    }
+    return s === reversedChars.join("");
 }
 
 //  HELPERS
