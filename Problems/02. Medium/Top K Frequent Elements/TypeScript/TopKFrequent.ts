@@ -1,3 +1,12 @@
+function TopKFrequent(nums: number[], k: number): number[] {
+    return [];
+}
+
+function S2_TopKFrequent(nums: number[], k: number): number[] {
+    // TODO HEAP SOLUTION
+    return [];
+}
+
 function S3_TopKFrequent(nums: number[], k: number): number[] {
     let count: Map<number, number> = new Map();
     let freq = Array();
