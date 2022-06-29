@@ -1,3 +1,7 @@
+function GroupAnagrams(strs: string[]): string[] {
+    return [];
+}
+
 function S1_GroupAnagrams(strs: string[]): string[][] {
     let map: Map<string, string[]> = new Map();
 
