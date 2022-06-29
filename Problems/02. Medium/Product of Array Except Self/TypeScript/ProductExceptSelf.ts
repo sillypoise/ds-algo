@@ -1,3 +1,7 @@
+function ProductExceptSelf(nums: number[]): number[] {
+    return [];
+}
+
 function S1_ProductExceptSelf(nums: number[]): number[] {
     let res = Array(nums.length).fill(1);
     let prefix = 1;
