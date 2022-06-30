@@ -1,3 +1,7 @@
+function LongestConsecutiveSeq(nums: number[]): number {
+    return -1;
+}
+
 function S1_LongestConsecutiveSeq(nums: number[]): number {
     let set = new Set(nums);
     let longest = 0;
@@ -14,5 +18,3 @@ function S1_LongestConsecutiveSeq(nums: number[]): number {
     }
     return longest;
 }
-
-S1_LongestConsecutiveSeq([100, 4, 200, 1, 3, 2]);
