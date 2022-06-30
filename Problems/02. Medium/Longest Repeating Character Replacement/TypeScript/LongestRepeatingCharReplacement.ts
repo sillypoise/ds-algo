@@ -1,3 +1,7 @@
+function LongestRepeatingCharReplacement(s: string, k: number): number {
+    return 0;
+}
+
 function S1_LongestRepeatingCharReplacement(s: string, k: number): number {
     let count: Map<string, number> = new Map();
     let res = 0;
