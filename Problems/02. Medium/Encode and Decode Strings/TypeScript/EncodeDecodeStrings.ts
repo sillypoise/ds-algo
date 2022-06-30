@@ -1,3 +1,11 @@
+function Encode(strs: string[]): string {
+    return "";
+}
+
+function Decode(str: string): string[] {
+    return [];
+}
+
 function S1_Encode(strs: string[]): string {
     let res = "";
     for (let str of strs) {
@@ -26,3 +34,5 @@ function S2_Decode(str: string): string[] {
 
 let test = S1_Encode(["hey", "jude"]);
 S2_Decode(test);
+
+export {};
