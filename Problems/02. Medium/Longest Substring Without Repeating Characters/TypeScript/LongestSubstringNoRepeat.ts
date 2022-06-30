@@ -5,24 +5,6 @@ function LongestSubstringNoRepeat(s: string): number {
 function S1_LongestSubstringNoRepeat(s: string): number {
     let tempMax = 0;
     let maxLength = 0;
-
-    for (let i = 0; i < s.length; i++) {
-        for (let j = tempMax; j < i; j++) {
-            if (s[i] === s[j]) {
-                tempMax = j + 1;
-                break;
-            }
-        }
-        if (i - tempMax + 1 > maxLength) {
-            maxLength = i - tempMax + 1;
-        }
-    }
-    return maxLength;
-}
-
-function S2_LongestSubstringNoRepeat(s: string): number {
-    let tempMax = 0;
-    let maxLength = 0;
     let map = new Map();
 
     for (let i = 0; i < s.length; i++) {
@@ -36,6 +18,24 @@ function S2_LongestSubstringNoRepeat(s: string): number {
         maxLength = Math.max(maxLength, i - tempMax + 1);
     }
 
+    return maxLength;
+}
+
+function S2_LongestSubstringNoRepeat(s: string): number {
+    let tempMax = 0;
+    let maxLength = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        for (let j = tempMax; j < i; j++) {
+            if (s[i] === s[j]) {
+                tempMax = j + 1;
+                break;
+            }
+        }
+        if (i - tempMax + 1 > maxLength) {
+            maxLength = i - tempMax + 1;
+        }
+    }
     return maxLength;
 }
 
