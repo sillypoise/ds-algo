@@ -1,3 +1,7 @@
+function ThreeSum(nums: number[]): number[][] {
+    return [];
+}
+
 function S1_ThreeSum(nums: number[]): number[][] {
     let res: number[][] = [];
     nums.sort((a, b) => a - b);
