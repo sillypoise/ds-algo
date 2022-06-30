@@ -1,3 +1,7 @@
+function ValidSudoku(board: string[][]): boolean {
+    return false;
+}
+
 function S1_ValidSudoku(board: string[][]): boolean {
     // Handler to return a new Set when accessing a non existent property on a Map
     let proxyHandler: ProxyHandler<Record<string, Set<string>>> = {
