@@ -1,3 +1,7 @@
+function LongestSubstringNoRepeat(s: string): number {
+    return -1;
+}
+
 function S1_LongestSubstringNoRepeat(s: string): number {
     let tempMax = 0;
     let maxLength = 0;
