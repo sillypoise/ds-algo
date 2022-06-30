@@ -1,3 +1,7 @@
+function TwoSumII(nums: number[], target: number): [number, number] {
+    return [-1, -1];
+}
+
 function S2_TwoSumII(nums: number[], target: number): [number, number] {
     let left = 0;
     let right = nums.length - 1;
