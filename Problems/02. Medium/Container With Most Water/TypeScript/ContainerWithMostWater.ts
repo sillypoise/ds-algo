@@ -1,3 +1,18 @@
+function ContainerWithMostWater(heights: number[]): number {
+    return -1;
+}
+
+function S1_ContainerWithMostWater(heights: number[]): number {
+    // BRUTE FORCE
+    let max = 0;
+    for (let i = 0; i < heights.length; i++) {
+        for (let j = i; j < heights.length; j++) {
+            max = Math.max(max, (j - i) * Math.min(heights[i], heights[j]));
+        }
+    }
+    return max;
+}
+
 function S2_ContainerWithMostWater(heights: number[]): number {
     let max = 0;
     let left = 0;
