@@ -1,3 +1,7 @@
+function PermutationInString(s1: string, s2: string): boolean {
+    return false;
+}
+
 function S1_PermutationInString(s1: string, s2: string): boolean {
     if (s1.length > s2.length) return false;
 
