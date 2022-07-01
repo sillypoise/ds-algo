@@ -1,4 +1,8 @@
 function DailyTemperatures(temperatures: number[]): number[] {
+    return [];
+}
+
+function S1_DailyTemperatures(temperatures: number[]): number[] {
     let res = Array(temperatures.length).fill(0);
     let stack: number[][] = [];
 
@@ -11,5 +15,3 @@ function DailyTemperatures(temperatures: number[]): number[] {
     }
     return res;
 }
-
-DailyTemperatures([4, 5, 2, 6]);
