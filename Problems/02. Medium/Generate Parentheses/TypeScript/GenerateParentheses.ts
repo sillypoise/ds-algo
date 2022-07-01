@@ -1,3 +1,7 @@
+function GenerateParentheses(n: number): string[] {
+    return [];
+}
+
 function S1_GenerateParentheses(n: number): string[] {
     let stack: string[] = [];
     let res: string[] = [];
