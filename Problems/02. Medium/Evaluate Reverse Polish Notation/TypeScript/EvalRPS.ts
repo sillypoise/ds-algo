@@ -1,3 +1,7 @@
+function EvalRPS(tokens: string[]): number {
+    return -0;
+}
+
 function S1_EvalRPS(tokens: string[]): number {
     let stack: number[] = [];
 
