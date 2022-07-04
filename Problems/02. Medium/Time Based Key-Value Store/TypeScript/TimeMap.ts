@@ -1,3 +1,13 @@
+class TimeMap {
+    constructor() {}
+
+    set(key: string, value: string, timestamp: number): void {}
+
+    get(key: string, timestamp: number): string {
+        return "";
+    }
+}
+
 class S1_TimeMap {
     store: Record<string, [string, number][]>;
     constructor() {
