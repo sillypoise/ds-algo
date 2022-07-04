@@ -1,3 +1,15 @@
+function Search2DMatrix(matrix: number[][], target: number): boolean {
+    return false;
+}
+
+function S1_Search2DMatrix(matrix: number[][], target: number): boolean {
+    return false;
+}
+
+function S2_Search2DMatrix(matrix: number[][], target: number): boolean {
+    return false;
+}
+
 function S3_Search2DMatrix(matrix: number[][], target: number): boolean {
     let rows = matrix.length;
     let cols = matrix[0].length;
