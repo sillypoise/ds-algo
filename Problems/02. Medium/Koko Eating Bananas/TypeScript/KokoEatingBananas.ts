@@ -1,3 +1,11 @@
+function KokoEatingBananas(piles: number[], h: number): number {
+    return -1;
+}
+
+function S1_KokoEatingBananas(piles: number[], h: number): number {
+    return -1;
+}
+
 function S2_KokoEatingBananas(piles: number[], h: number): number {
     let left = 1;
     let right = Math.max(...piles);
