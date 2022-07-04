@@ -1,3 +1,7 @@
+function CarFleet(target: number, position: number[], speed: number[]): number {
+    return 0;
+}
+
 function S1_CarFleet(
     target: number,
     position: number[],
