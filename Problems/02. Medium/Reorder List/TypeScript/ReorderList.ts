@@ -1,3 +1,21 @@
+interface ListNode {
+    val: number;
+    next: ListNode | null;
+}
+
+class ListNode {
+    val: number;
+    next: ListNode | null;
+    constructor(val?: number, next?: ListNode | null) {
+        this.val = !val ? 0 : val;
+        this.next = !next ? null : next;
+    }
+}
+
+function ReorderList(head: ListNode | null): void {}
+
+function S1_ReorderList(head: ListNode | null): void {}
+
 function S2_ReorderList(head: ListNode | null): void {
     let slow = head;
     let fast = head && head.next;
