@@ -1,3 +1,7 @@
+function FindMinRotated(nums: number[]): number {
+    return -1;
+}
+
 function S1_FindMinRotated(nums: number[]): number {
     let res = nums[0];
     let left = 0;
