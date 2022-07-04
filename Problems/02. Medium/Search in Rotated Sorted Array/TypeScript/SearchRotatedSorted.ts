@@ -1,3 +1,11 @@
+function SearchRotatedSorted(nums: number[], target: number): number {
+    return -1;
+}
+
+function S1_SearchRotatedSorted(nums: number[], target: number): number {
+    return -1;
+}
+
 function S2_SearchRotatedSorted(nums: number[], target: number): number {
     let left = 0;
     let right = nums.length - 1;
