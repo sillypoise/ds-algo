@@ -12,6 +12,10 @@ class ListNode {
     }
 }
 
+function RemoveNthFromEnd(head: ListNode | null, n: number): ListNode | null {
+    return null;
+}
+
 function S1_RemoveNthFromEnd(
     head: ListNode | null,
     n: number
@@ -52,3 +56,4 @@ let t = {
 };
 
 S1_RemoveNthFromEnd(t, 2);
+export {};
