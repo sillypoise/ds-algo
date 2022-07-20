@@ -1,3 +1,7 @@
+function FindDuplicateNumber(nums: Array<number>): number {
+    return 0;
+}
+
 function S1_FindDuplicateNumber(nums: Array<number>): number {
     let slowP = 0;
     let fastP = 0;
