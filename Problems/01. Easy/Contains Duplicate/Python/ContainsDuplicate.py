@@ -8,8 +8,8 @@ def S1_contains_duplicate(nums):
         for j in range(i + 1, len(nums)):
             compare_against = nums[j]
             if num_to_compare == compare_against:
-                return True;
-    return False;
+                return True
+    return False
 
 def S2_contains_duplicate(nums):
     nums.sort()
@@ -26,4 +26,4 @@ def S3_contains_duplicate(nums):
         if num in hash:
             return True
         hash.add(num)
-    return false
+    return False
