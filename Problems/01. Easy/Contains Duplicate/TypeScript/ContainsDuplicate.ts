@@ -1,11 +1,10 @@
-import { describe, expect, it, test } from "vitest";
-
 function containsDuplicate(nums: number[]): boolean {
     // ...
-    return;
+    return false;
 }
 
-function S1_containsDuplicate(nums: number[]): boolean {
+// Solution 1: Brute Force
+function S1_containsDuplicate(nums: Array<number>): boolean {
     for (let i = 0; i < nums.length - 1; i++) {
         // O(n)
         let numToCompare = nums[i];
@@ -18,21 +17,20 @@ function S1_containsDuplicate(nums: number[]): boolean {
     return false;
 }
 
-function S2_containsDuplicate(nums: number[]): boolean {
-    nums.sort((a, b) => a - b);
-    // O(n log(n))
-    for (let i = 0; i < nums.length; i++) {
+// Solution 2: Sort and Compare
+function S2_containsDuplicate(nums: Array<number>): boolean {
+    nums.sort((a, b) => a - b); // O(n log(n))
+    for (let i = 0; i < nums.length - 1; i++) {
         // O(n)
-        let firstPointer = nums[i];
-        let secondPointer = nums[i + 1];
-        if (firstPointer === secondPointer) {
+        if (nums[i] === nums[i + 1]) {
             return true;
         }
     }
     return false;
 }
 
-function S3_containsDuplicate(nums: number[]): boolean {
+// Solution 3: Hash Table
+function S3_containsDuplicate(nums: Array<number>): boolean {
     const hash: Record<number, boolean> = {}; // O(n) space
     for (const num of nums) {
         // O(n) time
@@ -43,8 +41,3 @@ function S3_containsDuplicate(nums: number[]): boolean {
     }
     return false;
 }
-
-test("Contains Duplicate", () => {
-    // expect(containsDuplicate([1, 2, 3, 4])).toBe(false);
-    // expect(containsDuplicate([1, 2, 3, 4, 4])).toBe(true);
-});

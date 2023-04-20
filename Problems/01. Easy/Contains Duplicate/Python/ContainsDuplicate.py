@@ -1,8 +1,11 @@
+from typing import List
+
 def contains_duplicate(nums):
     return
     
 
-def S1_contains_duplicate(nums):
+# Solution 1: Brute Force
+def S1_contains_duplicate(nums: List[int]) -> bool:
     for i in range(len(nums)):
         num_to_compare = nums[i]
         for j in range(i + 1, len(nums)):
@@ -11,16 +14,18 @@ def S1_contains_duplicate(nums):
                 return True
     return False
 
-def S2_contains_duplicate(nums):
-    nums.sort()
-    for i in range(len(nums)):
-        first_pointer = nums[i]
-        second_pointer = nums[i + 1]
-        if first_pointer == second_pointer:
+# Solution 2: Sort and Compare
+def S2_contains_duplicate(nums: List[int]) -> bool:
+    nums.sort()  # O(n log(n))
+    for i in range(len(nums) - 1):  # O(n)
+        p1 = i
+        p2 = i + 1
+        if nums[p1] == nums[p2]:
             return True
     return False
 
-def S3_contains_duplicate(nums):
+# Solution 3: Hash Table
+def S3_contains_duplicate(nums: List[int]) -> bool:
     hash = set()
     for num in nums:
         if num in hash:
