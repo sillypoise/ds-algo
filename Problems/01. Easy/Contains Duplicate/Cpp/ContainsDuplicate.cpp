@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm> // std::sort
+#include <unordered_set> // set 
 
 
 // Solution 2: Sort the array and check if any adjacent elements are equal.
@@ -15,6 +16,22 @@ bool S2_containsDuplicate(std::vector<int> &nums) {
   }
   return false;
 }
+
+
+// Solution 3: Set (Hash Table)
+
+bool S3_containsDuplicate(const std::vector<int>& nums) {
+    std::unordered_set<int> hash;
+
+    for (int num : nums) {
+        if (hash.find(num) != hash.end()) {
+            return true;
+        }
+        hash.insert(num);
+    }
+    return false;
+}
+
 
 // Main
 int main(int argc, char *argv[]) {

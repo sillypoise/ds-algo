@@ -20,6 +20,20 @@ func S2_containsDuplicate(nums []int) bool {
 	return false
 }
 
+// Solution 3: Set (Hash Table)
+
+func S3_containsDuplicate(nums []int) bool {
+	hash := make(map[int]bool);
+
+	for _, num := range nums {
+		if _, exists := hash[num]; exists {
+			return true;
+		}
+		hash[num] = true;
+	}
+	return false;
+}
+
 // Main
 
 func main() {

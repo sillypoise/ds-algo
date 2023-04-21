@@ -1,4 +1,6 @@
-import java.util.Arrays
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 class Main {
     
@@ -10,6 +12,19 @@ class Main {
             if (nums[i] == nums[i + 1]) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    // Solution 3: Set (Hash Table)
+    public static boolea S3_containsDulicate(int[] nums) {
+        Set<Integer> hash = new HashSet<>();
+
+        for (int num : nums) {
+            if (hash.contains(num)) {
+                return true;
+            }
+            hash.add(num)
         }
         return false;
     }

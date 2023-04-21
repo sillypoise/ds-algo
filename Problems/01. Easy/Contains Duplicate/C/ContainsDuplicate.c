@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <glib.h>
 
 
 
@@ -28,6 +29,21 @@ bool S2_contains_duplicate(int *nums, size_t length) {
     return false;
 }
 
+// Solution 3: Set (Hash Table)
+
+bool S3_contains_duplicate(int *nums, size_t length) {
+    GHashTable *hash = g_hash_table_new(g_int_hash, g_int_equal);
+
+    for (size_t i = 0; i < length; i++) {
+        if (g_hash_table_contains(hash, &nums[i])) {
+            g_hash_table_destroy(hash); // memory cleanup
+            return true;
+        }
+        g_hash_table_add(hash, &nums[i]);
+    }
+    g_hash_table_destroy(hash); // memory cleanup
+    return false;
+}
 
 // Main
 
@@ -36,8 +52,8 @@ int main() {
     size_t length = sizeof(nums) / sizeof(nums[0]);
 
     if (S2_contains_duplicate(nums, length)) {
-        printf("S2: Array contains duplicate.\n");
+        printf("Array contains duplicate.\n");
     } else {
-        printf("S2: Array does not contain duplicates.\n");
+        printf("Array does not contain duplicates.\n");
     }
 }

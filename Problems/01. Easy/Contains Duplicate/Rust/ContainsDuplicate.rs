@@ -25,6 +25,20 @@ fn S2_contains_duplicate(nums: &mut Vec<i32>) -> bool {
     
 }
 
+// Solution 3: Set (Hash Table)
+
+fn S3_contains_duplicate(nums: &[i32]) -> bool {
+    use std:collectinos:HashSet;
+    let mut hash = HashSet::new();
+
+    for &num in nums.iter() {
+        if hash.contains(&num) {
+            return true;
+        }
+        hash.insert(num);
+    }
+    false;
+}
 
 // Main
 

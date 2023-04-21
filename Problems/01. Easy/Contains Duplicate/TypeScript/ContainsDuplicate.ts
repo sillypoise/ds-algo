@@ -29,15 +29,15 @@ function S2_containsDuplicate(nums: Array<number>): boolean {
     return false;
 }
 
-// Solution 3: Hash Table
+// Solution 3: Set (Hash Table)
 function S3_containsDuplicate(nums: Array<number>): boolean {
-    const hash: Record<number, boolean> = {}; // O(n) space
+    const hash: Set<number> = new Set(); // O(n) space
     for (const num of nums) {
         // O(n) time
-        if (num in hash) {
+        if (hash.has(num)) {
             return true;
         }
-        hash[num] = true;
+        hash.add(num);
     }
     return false;
 }

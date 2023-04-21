@@ -24,7 +24,7 @@ def S2_contains_duplicate(nums: List[int]) -> bool:
             return True
     return False
 
-# Solution 3: Hash Table
+# Solution 3: Set (Hash Table)
 def S3_contains_duplicate(nums: List[int]) -> bool:
     hash = set()
     for num in nums:
